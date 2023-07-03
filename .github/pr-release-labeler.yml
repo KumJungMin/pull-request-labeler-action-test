@@ -10,8 +10,8 @@
 #   labels: ["mobile"]
 # - regExp: "^packages\/[^\/]+(\/.*)?$|^([^\/]+)?$"
 #   labels: ["desktop", "mobile"]
-desktop: ["packages/desktop/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
-mobile: ["packages/mobile/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
 electron: ["packages/electron/**/*"]
 alphachart: ["packages/alphachart/**/*"]
 alphachart-guest: ["packages/alphachart-guest/**/*"]
+desktop: ["packages/desktop/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
+mobile: ["packages/mobile/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
