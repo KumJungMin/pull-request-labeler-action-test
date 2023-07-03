@@ -1,0 +1,15 @@
+name-template: 'mobile@$RESOLVED_VERSION'
+tag-template: 'mobile@$RESOLVED_VERSION'
+tag-prefix: mobile
+template: |
+  ## Changes
+  $CHANGES
+sort-by: 'title'
+include-labels:
+  - 'mobile'
+version-resolver:
+  minor:
+    labels:
+      - 'feature'
+  default: patch
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'

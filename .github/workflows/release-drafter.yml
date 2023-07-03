@@ -1,0 +1,50 @@
+name: Release Drafter
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  desktop-draft-release:
+    runs-on: ubuntu-20.04
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'desktop') || join(github.event.issue.labels) == ''))
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-drafter-desktop.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  mobile-draft-release:
+    runs-on: ubuntu-20.04
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'mobile') || join(github.event.issue.labels) == ''))
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-drafter-mobile.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  alphachart-draft-release:
+    runs-on: ubuntu-20.04
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'alphachart')
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-drafter-alphachart.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  alphachart-guest-draft-release:
+    runs-on: ubuntu-20.04
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'alphachart-guest')
+    steps:
+      - name: Release drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-drafter-alphachart-guest.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

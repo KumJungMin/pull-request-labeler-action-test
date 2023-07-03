@@ -1,0 +1,15 @@
+name-template: 'alphachart-guest@$RESOLVED_VERSION'
+tag-template: 'alphachart-guest@$RESOLVED_VERSION'
+tag-prefix: alphachart-guest
+template: |
+  ## Changes
+  $CHANGES
+sort-by: 'title'
+include-labels:
+  - 'alphachart-guest'
+version-resolver:
+  minor:
+    labels:
+      - 'feature'
+  default: patch
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
