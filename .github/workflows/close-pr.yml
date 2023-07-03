@@ -8,6 +8,7 @@ jobs:
   desktop-draft-release:
     runs-on: ubuntu-20.04
     if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'desktop') || github.event.pull_request.labels.*.name === ''
-    - name: Run
+    steps:
+      - name: Run
         run: |
           echo "desktop release draft"
