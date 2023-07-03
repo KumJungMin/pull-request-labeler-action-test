@@ -15,7 +15,7 @@ alphachart: ["packages\/alphachart(\/.*)?$"]
 alphachart-guest: ["packages\/alphachart-guest(\/.*)?$"]
 desktop:
   - "packages/desktop/**/*"
-  - 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$'
+  - "*/**"
 mobile:
   - "packages/mobile/**/*"
-  - 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$'
+  - "*/**"
