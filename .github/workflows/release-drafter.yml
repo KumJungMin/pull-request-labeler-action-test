@@ -7,14 +7,14 @@ on:
 jobs:
   desktop-draft-release:
     runs-on: ubuntu-20.04
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'desktop') || join(github.event.pull_request.labels.*.name) == '')
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'desktop') || join(github.event.pull_request.labels.*.name) == '')
     steps:
       - name: desktop
         run: echo Release desktop
 
   mobile-draft-release:
     runs-on: ubuntu-20.04
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'mobile') || join(github.event.pull_request.labels.*.name) == '')
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'mobile') || join(github.event.pull_request.labels.*.name) == '')
     steps:
       - name: mobile
         run: echo Release mobile
