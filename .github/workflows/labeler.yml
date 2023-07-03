@@ -1,6 +1,7 @@
 name: PR Release Labeler
 on:
-  - pull_request
+  pull_request_review:
+    types: [submitted]
 
 jobs:
   triage:
@@ -8,6 +9,7 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-20.04
+    if: github.event.review.state == 'approved'
     steps:
       - uses: actions/labeler@v4
         with:
