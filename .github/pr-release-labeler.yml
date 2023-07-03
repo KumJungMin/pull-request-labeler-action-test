@@ -15,7 +15,11 @@ alphachart: ["packages\/alphachart(\/.*)?$"]
 alphachart-guest: ["packages\/alphachart-guest(\/.*)?$"]
 desktop:
   - "packages/desktop/**/*"
-  - "*/**"
+  - "*" # 루트에 있는 파일들도 desktop 라벨을 붙여준다.
+  # packages 내에서 2개 이상의 파일이 수정된 경우
+  # 루트에 있는 파일들도 desktop 라벨을 붙여준다.
+  - "^packages\/(desktop|mobile|electron)(?!.*\/\1)(?:\/(desktop|mobile|electron)){1,2}\/.*$"
 mobile:
   - "packages/mobile/**/*"
-  - "*/**"
+  - "*"
+  - "^packages\/(desktop|mobile|electron)(?!.*\/\1)(?:\/(desktop|mobile|electron)){1,2}\/.*$"
