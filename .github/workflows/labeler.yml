@@ -9,8 +9,8 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-20.04
+    if: github.event.review.state == 'approved'
     steps:
-      if: github.event.review.state == 'approved'
       - uses: actions/labeler@v4
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
