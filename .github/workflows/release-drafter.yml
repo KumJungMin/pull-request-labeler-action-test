@@ -10,25 +10,18 @@ jobs:
     if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'desktop') || join(github.event.issue.labels) == '')
     steps:
       - name: desktop
-        run: Release desktop
+        run: echo Release desktop
 
   mobile-draft-release:
     runs-on: ubuntu-20.04
     if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'mobile') || join(github.event.issue.labels) == '')
     steps:
       - name: mobile
-        run: Release mobile
+        run: echo Release mobile
 
-  alphachart-draft-release:
+  chart-draft-release:
     runs-on: ubuntu-20.04
     if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'alphachart')
     steps:
-      - name: alphachart
-        run: Release alphachart
-
-  alphachart-guest-draft-release:
-    runs-on: ubuntu-20.04
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && contains(github.event.pull_request.labels.*.name, 'alphachart-guest')
-    steps:
-      - name: guest
-        run: Release guest
+      - name: chart
+        run: echo Release chart
