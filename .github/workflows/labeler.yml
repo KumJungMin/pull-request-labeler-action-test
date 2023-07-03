@@ -1,10 +1,10 @@
 # Workflow to associate labels automatically
 name: labeler
 # Trigger the workflow on pull request events
-on: [pull_request]
+on: [pull_request_target]
 jobs:
   label:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       # We need to checkout the repository to access the configured file (.github/label-pr.yml)
       - uses: actions/checkout@v2
