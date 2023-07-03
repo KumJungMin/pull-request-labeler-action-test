@@ -1,12 +1,17 @@
-- regExp: "packages\/electron(\/.*)?$"
-  labels: ["electron"]
-- regExp: "packages\/alphachart(\/.*)?$"
-  labels: ["alphachart"]
-- regExp: "packages\/alphachart-guest(\/.*)?$"
-  labels: ["alphachart-guest"]
-- regExp: "packages\/desktop(\/.*)?$"
-  labels: ["desktop"]
-- regExp: "packages\/mobile(\/.*)?$"
-  labels: ["mobile"]
-- regExp: "^packages\/[^\/]+(\/.*)?$|^([^\/]+)?$"
-  labels: ["desktop", "mobile"]
+# - regExp: "packages\/electron(\/.*)?$"
+#   labels: ["electron"]
+# - regExp: "packages\/alphachart(\/.*)?$"
+#   labels: ["alphachart"]
+# - regExp: "packages\/alphachart-guest(\/.*)?$"
+#   labels: ["alphachart-guest"]
+# - regExp: "packages\/desktop(\/.*)?$"
+#   labels: ["desktop"]
+# - regExp: "packages\/mobile(\/.*)?$"
+#   labels: ["mobile"]
+# - regExp: "^packages\/[^\/]+(\/.*)?$|^([^\/]+)?$"
+#   labels: ["desktop", "mobile"]
+desktop: ["packages/desktop/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
+mobile: ["packages/mobile/**/*", 'packages\/[^\/]+(\/.*)?$|^([^\/]+)?$']
+electron: ["packages/electron/**/*"]
+alphachart: ["packages/alphachart/**/*"]
+alphachart-guest: ["packages/alphachart-guest/**/*"]
