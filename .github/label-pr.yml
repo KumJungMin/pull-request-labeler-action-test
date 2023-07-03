@@ -8,5 +8,5 @@
   labels: ["desktop"]
 - regExp: "packages\/mobile(\/.*)?$"
   labels: ["mobile"]
-- regExp: "(?!alphachart$)(?!electron$)(?!mobile$)(?!desktop$).*$"
-  labels: ["mobile", "desktop"]
+- regExp: "^packages\/[^\/]+(\/.*)?$|^([^\/]+)?$"
+  labels: ["desktop", "mobile"]
