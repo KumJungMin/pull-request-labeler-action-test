@@ -7,7 +7,7 @@ on:
 jobs:
   desktop-draft-release:
     runs-on: ubuntu-20.04
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'desktop') || join(github.event.issue.labels) == ''))
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'desktop') || contains(github.event.issue.labels, ''))
     steps:
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
@@ -18,7 +18,7 @@ jobs:
 
   mobile-draft-release:
     runs-on: ubuntu-20.04
-    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'mobile') || join(github.event.issue.labels) == ''))
+    if: github.event.pull_request.merged == true && github.base_ref == 'main' && (contains(github.event.pull_request.labels.*.name, 'mobile') || || contains(github.event.issue.labels, ''))
     steps:
       - name: Release drafter
         uses: release-drafter/release-drafter@v5
