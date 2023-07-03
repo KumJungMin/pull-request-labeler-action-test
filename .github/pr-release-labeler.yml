@@ -1,10 +1,10 @@
 electron:
-  - all: "packages/electron/**/*"
+  - all: ["packages/electron/**/*"]
 alphachart:
-  - all: "packages/alphachart/**/*"
+  - all: ["packages/alphachart/**/*"]
 alphachart-guest:
-  - all: "packages/alphachart-guest/**/*"
+  - all: ["packages/alphachart-guest/**/*"]
 desktop:
-  - all: "packages/desktop/**/*"
+  - all: ["packages/desktop/**/*"]
 mobile:
-  - all: "packages/mobile/**/*"
+  - all: ["packages/mobile/**/*"]
