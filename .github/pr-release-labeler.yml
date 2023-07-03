@@ -1,5 +1,10 @@
-electron: ["packages/electron/**/*"]
-alphachart: ["packages/alphachart/**/*"]
-alphachart-guest: ["packages/alphachart-guest/**/*"]
-desktop: ["packages/desktop/**/*"]
-mobile: ["packages/mobile/**/*"]
+electron:
+  - all: "packages/electron/**/*"
+alphachart:
+  - all: "packages/alphachart/**/*"
+alphachart-guest:
+  - all: "packages/alphachart-guest/**/*"
+desktop:
+  - all: "packages/desktop/**/*"
+mobile:
+  - all: "packages/mobile/**/*"
